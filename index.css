@@ -1,3 +1,29 @@
 * {
   font-size: 30px;
+  color:#cd75bb;
+  font-family: helvetica;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  margin: 50px 0px;
+}
+
+p {
+  color: #cd75bb;
+}
+
+img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+body { 
+  background-color: #030625;
+  width: 1000px;
+  margin: 0 auto;
 }
