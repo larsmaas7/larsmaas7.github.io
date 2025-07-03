@@ -1,33 +1,121 @@
-<!DOCTYPE html>
-<head>
-    <title>Buttons</title>
-    <link href="styles.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <h1>BUTTONS</h1>
-    </header>
-    <main>
-        <!-- glass section -->
-        <div class="glass-section">
-            <button class="btn">
-                Click Me!
-            </button>
-        </div>
-        <!-- colorful section -->
-        <div class="color1">
-            <div class="shape glass"></div>
-            <!-- box 1 -->
-            <div class="box glass">
-                <p>color 1</p>
-            </div>
-            <div class="box glass">
-                <p>still color 1</p>
-            </div>
-        </div>
-        <div class="color2">
-            <p>color 2</p>
-        </div>
-    </main>
-</body>
-</html>
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 50px;
+    padding: 15px 0px;
+    text-align: center;
+    background-color: grey;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0px 0px 15px 15px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: hsla(0, 0%, 100%, 0.5);
+}
+
+p {
+    font-size: 40px;
+}
+
+body {
+    background-image: url(https://zuidhollandslandschap.imgix.net/content/uploads/2022/04/kat-freepik-wirestock.jpeg?w=2000&fit=crop&crop=faces&auto=compress,format);
+    background-color: rgb(0, 18, 40);
+    background-blend-mode: overlay;
+    height: 500px;
+}
+
+.glass-section {
+    width: 100%;
+    height: 800px;
+}
+
+.color1 {
+    width: 100%;
+    height: 1500px;
+    /* background-color: blueviolet; */
+    background-image: url(https://dierenzorggids.nl/wp-content/uploads/2023/08/AdobeStock_182428980-2048x1363.jpeg);
+}
+
+.color1 > :nth-child(2) {
+    height: 300px;
+    margin-bottom: 400px;
+}
+.color1 > :nth-child(3) {
+    height: 800px;
+}
+
+.color2 {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(0, 0, 168);
+} 
+
+.glass {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.box {
+    width: 100%;
+    background-color: rgb(0, 128, 0);
+}
+
+.shape {
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    background-color: blue;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-fill-mode: both;
+    animation-range: 40% 100%;
+}
+
+@keyframes scroll {
+    0%, 10% {
+        height: 300px;
+        width: 300px;
+        transform: translate(0vw, 0%) rotate(-90deg);
+    }
+    50%, 70% {
+        height: 800px;
+        width: 300px;
+        transform: translate(calc(100vw - 300px), 700px) rotate(0deg);
+    }
+    80% {
+        height: 800px;
+        width: 100%;
+        transform: translate(0vw, 700px) rotate(0deg);
+    }
+
+    100% {
+        height: 800px;
+        width: 100%;
+        transform: translate(0vw, 700px) rotate(0deg);
+    }
+}
+
+button.btn {
+    display: block;
+    margin: 200px auto;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    color: hsla(0, 0%, 100%, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 10px hsla(0, 0%, 90%, 0.3);
+    background-color: hsla(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(10px);
+    transition-duration: 0.1s;
+    z-index: 1;
+}
+
+button.btn:active {
+    transform: translateY(10px);
+    box-shadow: 0px 0px hsla(0, 0%, 90%, 0.3);
+}
